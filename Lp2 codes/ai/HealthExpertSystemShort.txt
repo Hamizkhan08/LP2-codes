@@ -1,0 +1,45 @@
+class HealthExpertSystem:
+    def __init__(self):
+        self.symptoms = {
+            'fever': "Do you have a fever (above 100°F)? (yes/no): ",
+            'cough': "Are you coughing a lot? (yes/no): ",
+            'headache': "Do you have a headache? (yes/no): ",
+            'stomach_ache': "Are you experiencing stomach pain? (yes/no): ",
+            'fatigue': "Do you feel extremely tired? (yes/no): ",
+            'shortness_of_breath': "Are you having trouble breathing? (yes/no): "
+        }
+
+    def ask_question(self, question):
+        answer = input(question).lower()
+        return answer == "yes"
+
+    def diagnose(self):
+        print("Welcome to the Health Expert System!")
+        symptom = input("Please enter the symptom (fever, cough, headache, stomach_ache, fatigue, shortness_of_breath): ").lower()
+
+        if symptom in self.symptoms:
+            if self.ask_question(self.symptoms[symptom]):
+                if symptom == 'fever':
+                    print("You might have an infection. Stay hydrated and rest. See a doctor if it persists.")
+                elif symptom == 'cough':
+                    print("A dry cough could be a viral infection. Drink warm fluids and rest.")
+                elif symptom == 'headache':
+                    print("Headaches could be due to stress or dehydration. Try resting and drinking water.")
+                elif symptom == 'stomach_ache':
+                    print("Stomach pain can be from indigestion. If it's severe, consult a doctor.")
+                elif symptom == 'fatigue':
+                    print("Fatigue may be caused by stress or poor sleep. Get some rest and manage stress.")
+                elif symptom == 'shortness_of_breath':
+                    print("This is a serious symptom. Please seek immediate medical attention.")
+            else:
+                print("No need to worry. If symptoms persist, consult a doctor.")
+        else:
+            print("Sorry, I don't recognize this symptom. Please consult a healthcare professional.")
+    
+    def wrap_up(self):
+        print("Thank you for using the Health Expert System. Stay safe and take care of your health!")
+
+if __name__ == "__main__":
+    expert_system = HealthExpertSystem()
+    expert_system.diagnose()
+    expert_system.wrap_up()

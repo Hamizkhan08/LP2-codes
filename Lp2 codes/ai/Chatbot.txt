@@ -1,0 +1,52 @@
+def greet(botname,byear):
+    print(f"Hey this is {botname}!!!!")
+    print(f"i was made in {byear} by Hamiz khan")
+
+def name():
+    name=input("\nenter the name")
+    print(f"Hello {name}, Nice ton see you")
+
+def age():
+    from datetime import datetime
+    current=datetime.now().year
+    birthyear=int(input("\nbirth year"))
+    age=current-birthyear
+    print(age)
+
+def countingnum():
+    num=int(input("Enter Number"))
+    counter=0
+    while counter<num:
+        print(f"{counter}")
+        counter+=1
+        
+def quiz_time():
+    print("\n\nLet's see how well you know programming!")
+    print("What is Object-Oriented Programming (OOP)?")
+    print("1. A programming paradigm that uses objects and classes.")
+    print("2. A way of organizing code by defining a sequence of instructions.")
+    print("3. A method to handle errors and exceptions in a program.")
+    print("4. A technique to make a program run faster.")
+    answer=1
+    guess=int(input("Enter the option"))
+    while guess!=answer:
+        print("try again wrong answer")
+        guess=int(input("Enter the option"))
+    print("Correct! You've got a good understanding of Object-Oriented Programming!")
+    print(".......................................................")
+    print(".......................................................")
+    print(".......................................................")
+
+def wrap_up():
+    print("Great job! You're all set. Have an awesome day ahead!")
+    print(".......................................................")
+    print(".......................................................")
+    print(".......................................................")
+
+    
+greet('harry','2025')
+name()
+age()
+countingnum()
+quiz_time()
+wrap_up()
